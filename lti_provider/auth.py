@@ -1,9 +1,11 @@
 from hashlib import sha1
 
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.utils.encoding import force_bytes
 from nameparser import HumanName
 from pylti.common import LTIException
+
+User = get_user_model()
 
 
 class LTIBackend(object):
